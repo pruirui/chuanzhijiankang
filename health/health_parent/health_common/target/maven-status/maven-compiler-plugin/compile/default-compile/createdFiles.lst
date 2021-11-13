@@ -1,0 +1,16 @@
+com\xiao\constant\RedisConstant.class
+com\xiao\pojo\CheckItem.class
+com\xiao\constant\MessageConstant.class
+com\xiao\entity\QueryPageBean.class
+com\xiao\pojo\Member.class
+com\xiao\pojo\Setmeal.class
+com\xiao\pojo\Permission.class
+com\xiao\pojo\Menu.class
+com\xiao\pojo\Order.class
+com\xiao\pojo\CheckGroup.class
+com\xiao\pojo\User.class
+com\xiao\utils\QiniuUtils.class
+com\xiao\entity\PageResult.class
+com\xiao\pojo\OrderSetting.class
+com\xiao\pojo\Role.class
+com\xiao\entity\Result.class
