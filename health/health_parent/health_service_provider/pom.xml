@@ -28,11 +28,19 @@
         <artifactId>tomcat7-maven-plugin</artifactId>
         <configuration>
           <!-- 指定端口 -->
-          <port>81</port>
+          <port>881</port>
           <!-- 请求路径 -->
           <path>/</path>
         </configuration>
       </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <source>7</source>
+                <target>7</target>
+            </configuration>
+        </plugin>
     </plugins>
   </build>
 </project>
