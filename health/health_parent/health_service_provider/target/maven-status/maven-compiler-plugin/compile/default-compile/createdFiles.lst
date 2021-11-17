@@ -1,6 +1,8 @@
 com\xiao\dao\CheckItemDao.class
 com\xiao\service\impl\CheckItemServiceImpl.class
 com\xiao\service\impl\CheckGroupServiceImpl.class
+com\xiao\dao\OrderSettingDao.class
 com\xiao\dao\SetmealDao.class
 com\xiao\service\impl\SetmealServiceImpl.class
 com\xiao\dao\CheckGroupDao.class
+com\xiao\service\impl\OrderSettingServiceImpl.class

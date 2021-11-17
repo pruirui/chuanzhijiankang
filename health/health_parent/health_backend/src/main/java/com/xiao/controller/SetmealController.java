@@ -82,4 +82,50 @@ public class SetmealController {
         );
         return pageResult;
     }
+
+    //通过id查询
+    @RequestMapping("/findById")
+    public Result findById(Integer id){
+        Setmeal setmeal = setmealService.findById(id);
+        if(setmeal != null){
+            Result result = new Result(true, MessageConstant.QUERY_SETMEAL_SUCCESS);
+            result.setData(setmeal);
+            return result;
+        }
+        return new Result(false,MessageConstant.QUERY_SETMEAL_FAIL);
+    }
+    @RequestMapping("/findCheckGroupIdsBySetmealId")
+    public Result findCheckGroupIdsBySetmealId(Integer id){
+        try{
+            List<Integer> checkgroupIds =
+                    setmealService.findCheckGroupIdsBySetmealId(id);
+            return new Result(true,MessageConstant.QUERY_CHECKGROUP_SUCCESS,checkgroupIds);
+        }catch (Exception e){
+            e.printStackTrace();
+            return new Result(false, MessageConstant.QUERY_CHECKGROUP_FAIL);
+        }
+    }
+
+    //编辑
+    @RequestMapping("/edit")
+    public Result edit(@RequestBody Setmeal setmeal,Integer[] checkgroupIds){
+        try {
+            setmealService.edit(setmeal,checkgroupIds);
+        }catch (Exception e){
+            return new Result(false,MessageConstant.EDIT_SETMEAL_FAIL);
+        }
+        return new Result(true,MessageConstant.EDIT_SETMEAL_SUCCESS);
+    }
+
+    @RequestMapping("/delete")
+    public Result delete( Integer id){
+        try {
+            setmealService.delete(id);
+        }catch (RuntimeException e){
+            return new Result(false,e.getMessage());
+        }catch (Exception e){
+            return new Result(false, MessageConstant.DELETE_SETMEAL_FAIL);
+        }
+        return new Result(true,MessageConstant.DELETE_SETMEAL_SUCCESS);
+    }
 }

@@ -2,6 +2,7 @@ com\xiao\constant\RedisConstant.class
 com\xiao\pojo\CheckItem.class
 com\xiao\constant\MessageConstant.class
 com\xiao\entity\QueryPageBean.class
+com\xiao\utils\POIUtils.class
 com\xiao\pojo\Member.class
 com\xiao\pojo\Setmeal.class
 com\xiao\pojo\Permission.class
