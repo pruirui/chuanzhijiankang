@@ -1,3 +1,4 @@
 com\xiao\service\SetmealService.class
+com\xiao\service\OrderSettingService.class
 com\xiao\service\CheckGroupService.class
 com\xiao\service\CheckItemService.class
