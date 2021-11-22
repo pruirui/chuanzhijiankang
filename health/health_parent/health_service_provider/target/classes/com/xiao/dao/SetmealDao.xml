@@ -80,4 +80,24 @@
         delete from t_setmeal where id = #{id}
     </delete>
 
+    <select id="findAll" resultType="com.xiao.pojo.Setmeal">
+        select * from t_setmeal
+    </select>
+    <resultMap id="findByIdAllResultMap" type="com.xiao.pojo.Setmeal">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="code" property="code"/>
+        <result column="helpCode" property="helpCode"/>
+        <result column="sex" property="sex"/>
+        <result column="age" property="age"/>
+        <result column="price" property="price"/>
+        <result column="remark" property="remark"/>
+        <result column="attention" property="attention"/>
+        <result column="img" property="img"/>
+        <collection property="checkGroups" javaType="ArrayList" ofType="com.xiao.pojo.CheckGroup"
+                    column="id" select="com.xiao.dao.CheckGroupDao.findCheckGroupBySetmealId"></collection>
+    </resultMap>
+    <select id="findByIdAll" parameterType="int" resultMap="findByIdAllResultMap">
+        select * from t_setmeal where id = #{id}
+    </select>
 </mapper>

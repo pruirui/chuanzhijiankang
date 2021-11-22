@@ -21,4 +21,8 @@ public interface SetmealDao {
     void edit(Setmeal setmeal);
 
     void deleteById(Integer id);
+
+    List<Setmeal> findAll();
+    //根据id链式查询，将所有的项目组以及项目项都查到返回
+    Setmeal findByIdAll(int id);
 }

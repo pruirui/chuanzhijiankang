@@ -77,4 +77,26 @@
     <select id="findAll" resultType="com.xiao.pojo.CheckGroup">
         select * from t_checkgroup
     </select>
+
+    <resultMap id="findCheckGroupBySetmealIdResultMap" type="com.xiao.pojo.CheckGroup">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="code" property="code"/>
+        <result column="helpCode" property="helpCode"/>
+        <result column="sex" property="sex"/>
+        <result column="remark" property="remark"/>
+        <result column="attention" property="attention"/>
+        <collection property="checkItems"
+                    javaType="ArrayList"
+                    ofType="com.xiao.pojo.CheckItem"
+                    column="id"
+                    select="com.xiao.dao.CheckItemDao.findCheckItemByCheckGroupId">
+        </collection>
+    </resultMap>
+    <!--根据套餐id查询检查项信息-->
+    <select id="findCheckGroupBySetmealId" parameterType="int" resultMap="findCheckGroupBySetmealIdResultMap">
+      select * from t_checkgroup  
+        where id
+        in (select checkgroup_id from t_setmeal_checkgroup where setmeal_id=#{id})
+    </select>
 </mapper>
