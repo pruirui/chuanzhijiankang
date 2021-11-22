@@ -69,6 +69,16 @@ public class SetmealServiceImpl implements SetmealService {
         setmealDao.deleteById(id);
     }
 
+    @Override
+    public List<Setmeal> findAll() {
+        return setmealDao.findAll();
+    }
+
+    @Override
+    public Setmeal findByIdAll(int id) {
+        return setmealDao.findByIdAll(id);
+    }
+
     //将图片名称保存到Redis
     private void savePic2Redis(String pic){
         jedisPool.getResource().sadd(RedisConstant.SETMEAL_PIC_DB_RESOURCES,pic);
